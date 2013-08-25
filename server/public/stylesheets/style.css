@@ -1,0 +1,353 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: #E1E1E1;
+    font-size: 62.5%;
+    background-image: url('/images/halftone_md.png');
+}
+
+div#main {
+    padding: 4%;
+}
+    
+a {text-decoration:none;}
+
+input[type="text"]
+{
+    border-style: solid none none solid;
+    border-width: 1px 0px 0px 1px;
+    background-color: #E1E1E1;
+    padding: 2px;
+    border-top-color: #b6b6b6;
+    border-left-color: #b6b6b6;
+    font-size: 1em;
+}
+
+.navbar
+{
+    margin-bottom: 8%;
+    overflow: visible;
+    color: #999999;
+    background-color: #000;
+    padding: 12px 0;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    box-shadow: rgba(0,0,0,.4) 0 5px 9px 5px;
+    -moz-box-box-shadow: rgba(0,0,0,.4) 0 5px 9px 5px;
+    -webkit-box-shadow: rgba(0,0,0,.4) 0 5px 9px 5px;
+    top: 0px;
+}
+
+h1.brand
+{
+    display: block;
+    margin: 0;
+    font-size: 2.2em;
+    font-family: "arial" , "helvetica" , sans-serif;
+    color: #999999;
+    padding: 0 0 0 20px;
+    font-weight: lighter;
+    float:left;
+}
+
+div#buttons 
+{
+    float:right;
+    margin: 0 10px;
+}
+
+table.pingResults {
+	background-color: white;
+}
+
+table.pingResults th {
+	width: 20px;
+};
+
+th.blank {
+	width: auto;
+}
+
+td.result {
+	background-color: #c0c0c0;
+}
+
+td.result.success {
+	background-color: green;
+}
+
+td.result.failure {
+	background-color: red;
+}
+
+.bladeServer {
+  background-color: #f0f0f0;
+  clear: both;
+}
+
+div.bladeHeader
+{
+    padding: 5px 0 5px 50px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #B6B6B6;
+}
+ div.bladeHeader a.tree_trigger, div.bladeHeader h3, div.bladeHeader button 
+ {
+    display:inline-block;
+ }
+ 
+ div.bladeHeader h3
+{
+    margin: 0;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 2.5em;
+}
+
+div.bladeHeader.unknown {
+    background-position: 9px 9px;
+    background-color: #fff;
+    background-image: url('/images/icon_blade_server_unknown_32.png');
+    background-repeat: no-repeat;
+}
+
+div.bladeHeader.connected
+{
+    background-position: 9px 9px;
+    background-color: #fff;
+    background-image: url('/images/icon_blade_server_active_32.png');
+    background-repeat: no-repeat;
+}
+
+.bladeHeader > img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+ul.content {
+  background-color: #4050F0;
+  clear: both;
+}
+
+li.blade {
+  width: auto;
+  clear: both;
+  padding: 5px 10px 5px 10px;
+}
+
+.bladeServer .cannot-reach {
+    background-color: red;
+}
+
+.bladeServer .verified {
+    background-color: green;
+}
+
+.bladeServer .pending {
+    background-color: yellow;
+}
+
+li.blade > img {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+div.networkDisplay {
+  width: auto;
+  float: right;
+}
+
+div.network {
+  width: auto;
+}
+
+p.tree_controls {display: none;}
+
+div.bladeRow 
+{
+    background-color:#fff;
+    margin: 5px 30px 5px 6px;
+    clear:both;
+}
+
+div.column
+{
+    padding: 7px;
+    display: inline-block;
+    width: 22%;
+}
+
+div.column p 
+{
+    font-size: 1.1em;
+}
+
+div.mac 
+{
+    font-size: 1.6em;
+    color:#777;
+}
+
+.lunResults {
+    margin: 5px 30px 5px 6px;
+    width: auto;
+    clear:both;
+}
+
+/**** tree controls ****/
+ul.tree, ul.tree li ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a.tree_trigger
+{
+    margin: 20px 5px;
+    background-position: 0px 0px;
+    background-image: url('/images/sprite_expander_controls.png');
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 9px;
+    line-height: 2em;
+    float: left;
+}
+
+a.tree_trigger:hover
+{
+    background-position: 0px -10px;
+}
+
+.tree a.tree_trigger_expanded 
+{
+    margin: 5px;
+    background-position: 10px 0px;
+    background-image: url('/images/sprite_expander_controls.png');
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 9px;
+    line-height: 2em;
+    float: left;
+    }
+    
+ .tree a.tree_trigger_expanded:hover
+{
+    background-position:-10px -10px;
+}
+
+li.blade
+{
+    background-position: 5px 6px;
+    padding: 0 0 0 40px;
+    background-image: url('/images/icon_blade_32.png');
+    background-repeat: no-repeat;
+    margin: 0 0 0 0px;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: #fff;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #E1E1E1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/**** end tree controls ****/
+
+ul.navigation {
+    margin: 0px 10px 0px 10px;
+    background-color: #000;
+    display: inline-block;
+}
+
+ul.navigation > li:before {
+    margin: 0px 5px 5px 0px;
+    content: ">";
+    color: red;
+}
+
+ul.navigation > li {
+    padding: 3px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 12pt;
+    font-weight: bold;
+    display: inline-block;
+}
+
+ul.navigation > li.current {
+    background-color: #B5B5B5;
+    border-color: red;
+    border-width: 5px;
+    color: green;
+}
+
+.dataControlls {
+    display: inline;
+}
+
+.hide {
+    display: none;
+}
+
+.resourceItem {
+    background-color: yellow;
+}
+
+.resourceItem.cannot-reach {
+    background-color: red;
+}
+
+.resourceItem.connected {
+    background-color: green;
+}
+
+.resourceInfo {
+    background-color: white;
+    font-size: 10pt;
+}
+
+/* the overlayed element */
+.overlay {
+
+    /* initially overlay is hidden */
+    display:none;
+
+    /* growing background image */
+    background-image:url(/images/jqueryTools/white.png);
+    background-color: #FFF;
+
+    /*
+      width after the growing animation finishes
+      height is automatically calculated
+      */
+    width:350px;
+
+    /* some padding to layout nested elements nicely  */
+    padding:35px;
+
+    /* a little styling */
+    font-size:11px;
+
+}
+
+/* default close button positioned on upper right corner */
+.overlay .close {
+    background-image:url(/images/jqueryTools/close.png);
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+.adminGroup {
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    margin: 5px 0px 5px 0px;
+}

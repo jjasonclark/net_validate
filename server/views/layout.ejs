@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NET_Validate</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type='text/javascript' src='/javascripts/underscore-min.js'></script>
+    <script type='text/javascript' src='/javascripts/jquery-1.7.2.min.js'></script>
+    <script type='text/javascript' src="/javascripts/jquery.tools.min.js"></script>
+    <script type='text/javascript' src="/javascripts/tree.js"></script>
+    <script type='text/javascript' src="/javascripts/jquery.jscrollpane.min.js"></script>
+    <script type='text/javascript' src="/javascripts/mwheelIntent.js"></script>
+    <script type='text/javascript' src="/javascripts/jquery.mousewheel.js"></script>
+    <script type='text/javascript' src="/socket.io/socket.io.js"></script>
+    <script type='text/javascript' src='/javascripts/net_validate.js'></script>
+    <script type='text/javascript' src='/javascripts/breadCrumb.js'></script>
+    <script type='text/javascript' src='/javascripts/renderTemplates.js'></script>
+    <script type='text/javascript' src='/javascripts/admin.js'></script>
+    <script type='text/javascript' src='/javascripts/application.js'></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <h1 class="brand">NET_Validate</h1>
+      <ul id="topNav" class="navigation">
+        <li class="current" data-target="#discovery">Discovery</li>
+        <li data-target="#access">Data collection</li>
+        <li data-target="#validation">Validation</li>
+      </ul>
+      <div id="buttons">
+        <div class="dataControlls">
+          <button onclick="net_validate.downloadData();">Save data</button>
+          <button id="uploadButton">Upload data</button>
+        </div>
+        <button onclick="net_validate.fetchData();">Reload data</button>
+        <button id="adminButton">Admin</button>
+        <p class="tree_controls">
+          <a class="expand_all" href="#">Expand All</a>
+          <a class="collapse_all" href="#">Collapse All</a>
+        </p>
+      </div>
+    </div>
+    <%- body %>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<%
+function convertBladeStatus(statusCode) {
+  if(statusCode == 1) return "verified";
+  if(statusCode == 0) return "cannot-reach";
+  return "pending";
+}
+
+function convertNetworkStatus(statusCode) {
+  if(statusCode == 1) return "verified";
+  if(statusCode == 0) return "cannot-reach";
+  return "pending";
+}
+%>
+<li class="bladeServer">
+    <a href="#" class="tree_trigger">&nbsp;</a>
+    <div class="bladeHeader">
+        <h3><%= model.ipv4 %></h3>
+    </div>
+    <% if(!_.isUndefined(model.blades) && !_.isUndefined(model.blades.length)) { %>
+    <ul class="content tree_expanded">
+    <% _.each(model.blades, function(blade) { %>
+    <% var bladeStatus = convertBladeStatus(blade.verified); %>
+        <li class="blade <%= bladeStatus %>">
+               <div class="lunResults"><%= blade.WWNs ? blade.WWNs.join(", ") : "No WWNs found" %></div>
+            <% if(!_.isUndefined(blade.networks)) { %>
+            <% _.each(blade.networks, function (network) { %>
+            <% var networkStatus = convertNetworkStatus(network.pingVerified); %>
+                <div class="network bladeRow <%= networkStatus %>">
+                   <div class="column mac"><%= network.mac || "unknown mac" %></div>
+                   <div class="column IP">
+                       <input class="ipv4" type="text" value="<%= network.ipv4 %>" data-mac="<%= network.mac %>" />
+                   </div>
+                   <div class="column pingResults">
+                    <%= (network.pingVerified == 1 || network.pingVerified == 0) ? "Ping complete" : "Ping pending" %>
+                   </div>
+                </div>
+            <% }); %>
+            <% } %>
+        </li>
+    <% }); %>
+    </ul>
+    <% } else { %>
+      <b>No blades<b>
+    <% } %>
+</li>

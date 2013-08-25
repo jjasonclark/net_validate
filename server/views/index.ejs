@@ -1,0 +1,67 @@
+<div id="main">
+
+  <div id="discovery" class="hide">
+    <button onclick="net_validate.pingResources();">Ping all resources</button>
+    <button id="addResourceButton">Add resource</button>
+    <ul id="discoveryDisplay"></ul>
+  </div>
+
+  <div id="access" class="hide">
+    <button onclick="net_validate.collectResources();">Log into all resources</button>
+    <ul id="accessDisplay"></ul>
+  </div>
+
+  <div id="validation" class="hide">
+    <button onclick="net_validate.verifyBlades();">Validate blade data</button>
+    <button onclick="net_validate.pingBlades();">Start blade ping tests</button>
+    <ul id="bladesDisplay" class="tree"></ul>
+  </div>
+
+</div>
+
+<div id="admin" class="overlay">
+  <h1>Admin area</h1>
+  <div class="adminGroup">
+    <h2>Discovery step</h2>
+    <button onclick="net_admin.finishPingDiscovery();">Finish ping discovery</button>
+  </div>
+  <div class="adminGroup">
+    <h2>Data collection step</h2>
+    <button onclick="net_admin.finishDataCollection();">Finish data collection</button>
+    <button onclick="net_admin.setTestBladeData();">Set test blade data</button>
+    <button onclick="net_admin.setBladeData();">Set fake blade data</button>
+    <button onclick="net_admin.setWWNData();">Set fake WWN data</button>
+  </div>
+  <div class="adminGroup">
+    <h2>Validation step</h2>
+    <button onclick="net_admin.finishBladeVerification();">Verify all blades</button>
+    <div>
+      <h3>Ping test</h3>
+      <button onclick="net_admin.failPingTest();">Fail remaining</button>
+      <div>
+        <input type="text" value="10.20.86.150" id="pingTestInput" />
+        <button onclick="net_admin.startPingTesting()">Start testing</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fileUpload" class="overlay">
+  <form method="post" action="/data" enctype="multipart/form-data">
+    <fieldset>
+      <legend>File upload</legend>
+      <input type="file" name="dataFile" />
+      <input type="submit" value="Upload" />
+    </fieldset>
+  </form>
+</div>
+
+<div id="addResourcePanel" class="overlay">
+  <form method="post" action="/data/create" id="addResourceForm">
+    <fieldset>
+      <legend>Add Resource</legend>
+      <input type="text" name="name" />
+      <input type="submit" value="Upload" />
+    </fieldset>
+  </form>
+</div>

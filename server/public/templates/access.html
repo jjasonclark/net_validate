@@ -1,0 +1,20 @@
+<li class="access">
+	<div>
+  <div class="resourceItem <%= model.collectionStatus %>">
+    <span class="name"><%= model.name %></span>
+    <span>User name: </span><input type="text" value="<%= model.userName %>" />
+    <span>Password: </span><input type="password" value="<%= model.password %>" />
+  </div>
+  <% if(!_.isUndefined(model.WWNs)) { %>
+	<div class="resourceInfo">
+		<b><%= model.WWNs.length %></b> WWNs found.
+		<span>[<%= model.WWNs.join(", ") %>]</span>
+  </div>
+  <% } %>
+  <% if(!_.isUndefined(model.blades)) { %>
+	<div class="resourceInfo">
+		<b><%= model.blades.length %></b> blades found
+  </div>
+  <% } %>
+  </div>
+</li>

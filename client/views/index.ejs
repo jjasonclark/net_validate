@@ -1,0 +1,10 @@
+<div>
+	<div>Networks: <%= networks.length %></div>
+<% for(var i = 0, max = networks.length; i < max; ++i) { %>
+    <div class="interface">
+        <div>Interface: <%= networks[i].name %></div>
+        <div>Mac: <%= networks[i].mac %></div>
+        <div>IP: <%= networks[i].ipv4 %></div>
+    </div>
+<% } %>
+</div>
